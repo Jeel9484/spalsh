@@ -11,7 +11,7 @@ const UserCard: React.FC<UserCardProps> = ({ item }) => {
   return (
     <div className="relative py-6 bg-white border">
       {/* Top-right icons */}
-      <div className="absolute top-2 right-2 flex gap-3">
+      <div className="absolute top-5 right-5 flex gap-3">
         <Trash className="text-red-400 hover:text-red-600 cursor-pointer" />
         <Edit className="text-gray-400 hover:text-gray-600 cursor-pointer" />
       </div>
