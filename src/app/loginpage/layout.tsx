@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/app/globals.css";
 
 export const metadata = {
   title: "Infosnap",
@@ -12,9 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

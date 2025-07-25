@@ -1,7 +1,7 @@
 "use client"
 import LoginPage from "@/pages/login"
 
-export default function HomePage() {
+export default function Loginpage() {
   return (
    <>
    <LoginPage/>
