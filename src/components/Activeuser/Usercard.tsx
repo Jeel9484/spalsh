@@ -1,4 +1,4 @@
-import { EmojiHappy,Trash,Edit } from "iconsax-reactjs";
+import { EmojiHappy, Trash, Edit } from "iconsax-reactjs";
 import Image from "next/image";
 import { User } from "@/data/userdata";
 
@@ -17,30 +17,28 @@ const UserCard: React.FC<UserCardProps> = ({ item }) => {
       </div>
 
       {/* Avatar with optional yellow circle background */}
-      <div className="w-full h-full flex flex-col items-center justify-center">
+      <div className="grid place-items-center">
         <div
-          className={`h-[70px] w-[70px] rounded-full overflow-hidden ${
+          className={`h-[70px] w-[70px] rounded-full overflow-hidden mb-2 ${
             yellowBgIndices.includes(item.id)
               ? "bg-yellow-400"
               : "bg-light-gray"
           }`}
         >
-          <div className="w-18 h-18 mb-2">
-            <Image
-              src={item.image}
-              alt={item.name}
-              width={70}
-              height={70}
-              className="object-cover w-full h-full filter grayscale"
-            />
-          </div>
+          <Image
+            src={item.image}
+            alt={item.name}
+            width={70}
+            height={70}
+            className="object-cover w-full h-full filter grayscale"
+          />
         </div>
 
         {/* Name */}
         <h3 className="text-sm font-semibold text-gray mb-6">{item.name}</h3>
 
         {/* Snap Count */}
-        <div className="bg-yellow-400 text-white px-4 py-1 text-sm rounded-full font-semibold flex items-center gap-2 ">
+        <div className="bg-yellow-400 w-fit text-white px-4 py-1 text-sm rounded-full font-semibold flex items-center gap-2 ">
           <EmojiHappy />
           {item.snapCount}
         </div>
