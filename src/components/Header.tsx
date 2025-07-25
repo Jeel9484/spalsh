@@ -147,10 +147,10 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full sticky top-0 bg-white border-b border-gray-200 z-10">
-      <div className="flex items-center justify-between px-8 pt-8 mb-8.5">
+    <header className="w-full sticky top-0 bg-white border-b border-gray-200 z-50">
+      <div className="col-span-1 flex justify-between px-8 pt-8 mb-8.5">
         {/* Search input */}
-        <div className="flex items-center gap-2 w-1/2 relative">
+        <div className="flex items-center gap-2">
           <IoIosSearch className="w-6 h-6 text-gray-400" />
           <input
             type="text"

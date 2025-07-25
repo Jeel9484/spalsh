@@ -16,7 +16,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="w-[220px] bg-white flex flex-col justify-between border-r border-gray-200 fixed left-0 top-0 z-30 shadow-custom"
+      className=" bg-white flex flex-col justify-between border-r border-gray-200 fixed left-0 top-0 z-30 shadow-custom"
       style={{ height: "calc(100vh - 20px)" }}
     >
       <div>

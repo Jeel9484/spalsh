@@ -9,9 +9,9 @@ const UserCard: React.FC<UserCardProps> = ({ item }) => {
   const yellowBgIndices = [2, 4, 5, 7]; // Cards 2, 4, 5, 7
 
   return (
-    <div className=" relative py-6 h-[243px] bg-white border flex flex-col items-center justify-center">
+    <div className="relative py-6 bg-white border">
       {/* Top-right icons */}
-      <div className=" absolute top-2 right-2 flex gap-3 mt-5 mr-5">
+      <div className="absolute top-2 right-2 flex gap-3">
         <Trash className="text-red-400 hover:text-red-600 cursor-pointer" />
         <Edit className="text-gray-400 hover:text-gray-600 cursor-pointer" />
       </div>
