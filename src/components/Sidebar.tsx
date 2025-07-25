@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logout } from "iconsax-reactjs";
-import { NAV_ITEMS, LOGO, SIDEBAR_LOGO, USER } from "@/data/sidebardata";
+import { NAV_ITEMS, SIDEBAR_LOGO, USER } from "@/data/sidebardata";
 
 export default function Sidebar() {
   const router = useRouter();
@@ -16,15 +16,8 @@ export default function Sidebar() {
 
   return (
     <aside
-      className=" bg-white flex flex-col justify-between border-r border-gray-200 fixed left-0 top-0 z-30 shadow-custom"
-      style={{ height: "calc(100vh - 20px)" }}
-    >
+      className="w-full bg-white flex flex-col justify-between border-r border-gray-200 z-30 shadow-custom">
       <div>
-        {/* Logo */}
-        <div className="flex items-center px-6 py-8 border-b border-gray-200">
-          <Image src={LOGO} alt="logo" width={30} height={30} className="h-10 w-auto" />
-        </div>
-
         {/* Sidebar brand */}
         <div className="flex items-center gap-2 py-6 px-8 border-b border-gray-200">
           <Image src={SIDEBAR_LOGO} alt="logo" width={40} height={40} className="h-7 w-auto" />

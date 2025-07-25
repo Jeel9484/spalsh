@@ -15,7 +15,7 @@ export const NAV_ITEMS = [
   { label: "Integrations", icon: Setting2, href: "/dashboard/integration" },
 ];
 
-export const LOGO = "/assets/logo.svg";
+
 export const SIDEBAR_LOGO = "/assets/sidebar-logo.svg";
 
 export const USER = {

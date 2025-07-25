@@ -54,9 +54,7 @@ export default function DashboardPage() {
             <Barchart />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="shadow-custom rounded-2xl">
-              <Piechart />
-            </div>
+            <Piechart />
             <div className="w-full">
               <div className="flex justify-between items-center">
                 <span className="font-semibold text-base">Active users</span>

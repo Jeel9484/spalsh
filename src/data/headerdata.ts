@@ -25,6 +25,7 @@ export interface SearchResultsData {
   users: User[];
 }
 
+export const LOGO = "/assets/logo.svg";
 export const mockSearchResults: SearchResultsData = {
   projects: [
     { id: 1, title: "Project Alpha", snaps: 32 },
