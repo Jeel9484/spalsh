@@ -43,6 +43,7 @@ export default function LoginForm() {
           <input
             id="email"
             type="email"
+            autoComplete="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="jeedee@eugeniuses.com"
