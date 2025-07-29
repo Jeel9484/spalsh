@@ -1,23 +1,46 @@
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  variant?: "primary"
+  size?: "xs" | "sm";
 }
 
+const variantClasses = {
+  primary:
+    "bg-black text-white hover:bg-gray-800",
+};
+
+const sizeClasses = {
+  xs: "h-10 px-3.5 py-[13px] gap-2.5",
+
+  sm: "h-[38px] px-3.5 py-3",
+};
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ leftIcon, rightIcon, children, className = "", ...props }, ref) => (
+  (
+    {
+      children,
+      className = "",
+      variant = "primary",
+      size = "xs",
+      ...props
+    },
+    ref
+  ) => (
     <button
       ref={ref}
       type="button"
-      className={`inline-flex items-center gap-2 px-3 py-3 rounded-2xl bg-black text-white text-sm font-medium hover:bg-gray-800 focus:outline-none transition-all ${className}`}
+      className={`
+        inline-flex items-center rounded-xl focus:outline-none transition-all
+        ${variantClasses[variant]} 
+        ${sizeClasses[size]}
+        ${className}
+      `}
       {...props}
     >
-      {leftIcon && <span className="mr-1">{leftIcon}</span>}
       {children}
-      {rightIcon && <span className="ml-1">{rightIcon}</span>}
     </button>
   )
 );

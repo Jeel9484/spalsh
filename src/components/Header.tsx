@@ -1,10 +1,8 @@
 "use client";
-
-import { IoIosSearch } from "react-icons/io";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { MdCalendarToday, MdAccessTime } from "react-icons/md";
+import { ArrowRight, SearchNormal1 } from "iconsax-reactjs";
 import {
   mockSearchResults,
   SearchResultsData,
@@ -14,29 +12,21 @@ import {
 
 const CAPACITY = 75;
 
-const SnapSearchResult: React.FC<Snap> = ({
-  image,
-  title,
-  author,
-  date,
-  time,
-}) => (
-  <div className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-md cursor-pointer">
-    <div className="w-12 h-12 relative rounded overflow-hidden">
+const SnapSearchResult: React.FC<Snap> = ({ image, title, author }) => (
+  <div className="flex items-center justify-between gap-3 px-2 py-2 hover:bg-gray-50 cursor-pointer">
+  <div className="flex items-center gap-3 min-w-0">
+    <div className="w-14 h-14 relative overflow-hidden flex-shrink-0">
       <Image src={image} alt={title} fill className="object-cover" />
     </div>
-    <div>
-      <h4 className="font-medium text-sm">{title}</h4>
-      <div className="text-xs text-gray-500 flex items-center gap-2">
-        <span>{author}</span>
-        <span className="flex items-center gap-1">
-          <MdCalendarToday size={10} /> {date}
-        </span>
-        <span className="flex items-center gap-1">
-          <MdAccessTime size={10} /> {time}
-        </span>
+    <div className="min-w-0">
+      <h4 className="font-bold text-base text-gray-900 truncate">{title}</h4>
+      <div className="text-sm text-gray-400 truncate">
+        {author}
       </div>
     </div>
+  </div>
+  {/* Right: Arrow */}
+  <ArrowRight size={16} className="text-gray-400 flex-shrink-0" />
   </div>
 );
 
@@ -74,56 +64,84 @@ const SearchResults: React.FC<SearchResultsProps> = ({
 
   if (!isVisible) return null;
 
+  const activeIndices = [0];
+
   return (
     <div
       ref={resultsRef}
-      className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden"
+      className="absolute top-full left-64 w-[432px] bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden"
     >
-      <div className="p-4">
-        <div className="mb-4">
-          <h3 className="text-sm font-semibold text-gray-500 mb-2">Projects</h3>
-          <div className="space-y-1">
+      <div className="px-5">
+        <div className="border-b border-gray-200 mb-7.5">
+          <div className="flex justify-between mt-5 mb-5">
+            <h3 className="text-sm font-semibold text-gray-500 ">Users</h3>
+            <span className="font-bold text-black text-xs underline">
+              All users
+            </span>
+          </div>
+          <div className="space-y-1 mb-7.5">
+            {results.users.map((user, idx) => (
+              <div
+                key={user.id}
+                className={`flex items-center gap-2 p-2 hover:bg-gray-50 rounded-md cursor-pointer`}
+              >
+                <Image
+                  src={user.image}
+                  alt={user.name}
+                  width={34}
+                  height={34}
+                  className={`rounded-full w-8.5 h-8.5 object-cover
+                    ${activeIndices.includes(idx) ? "bg-primary" : "grayscale"}
+                    `}
+                />
+                <h4 className="font-medium text-sm">{user.name}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-b border-gray-200 mb-7.5">
+          <div className="flex justify-between mb-5">
+            <h3 className="text-sm font-semibold text-gray-500 mb-2">
+              Projects
+            </h3>
+            <span className="font-bold text-black text-xs underline">
+              All Projects
+            </span>
+          </div>
+          <div className="space-y-1 mb-7.5">
             {results.projects.map((project) => (
               <div
                 key={project.id}
                 className="p-2 hover:bg-gray-50 rounded-md cursor-pointer"
               >
-                <h4 className="font-medium text-sm">{project.title}</h4>
-                <p className="text-xs text-gray-500">{project.snaps} snaps</p>
+                <div className="flex justify-between">
+                  <div>
+                    <h4 className="font-medium text-sm">{project.title}</h4>
+                    <p className="text-xs text-gray-500">{project.name}</p>
+                  </div>
+                  <div>
+                    <ArrowRight size={16} className="text-gray-400" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="mb-4">
-          <h3 className="text-sm font-semibold text-gray-500 mb-2">Snaps</h3>
+          <div className="flex justify-between mb-5">
+            <h3 className="text-sm font-semibold text-gray-500 mb-2">Snaps</h3>
+            <span className="font-bold text-black text-xs underline">
+              All snaps
+            </span>
+          </div>
           <div className="space-y-1">
             {results.snaps.map((snap) => (
               <SnapSearchResult key={snap.id} {...snap} />
             ))}
           </div>
         </div>
-
-        <div>
-          <h3 className="text-sm font-semibold text-gray-500 mb-2">Users</h3>
-          <div className="space-y-1">
-            {results.users.map((user) => (
-              <div
-                key={user.id}
-                className="p-2 hover:bg-gray-50 rounded-md cursor-pointer"
-              >
-                <h4 className="font-medium text-sm">{user.name}</h4>
-                <p className="text-xs text-gray-500">{user.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-50 p-3 text-center border-t border-gray-200">
-        <button className="text-sm text-blue-600 font-medium hover:text-blue-800">
-          View all results
-        </button>
       </div>
     </div>
   );
@@ -155,7 +173,7 @@ export default function Header() {
       users: mockSearchResults.users.filter(
         (u) =>
           u.name.toLowerCase().includes(query) ||
-          u.role.toLowerCase().includes(query)
+          u.image.toLowerCase().includes(query)
       ),
     };
 
@@ -172,7 +190,7 @@ export default function Header() {
       <div className=" flex items-center justify-between px-8 py-7">
         {/* Logo and search input */}
         <div>
-            <Image
+          <Image
             src={LOGO}
             alt="logo"
             width={30}
@@ -180,42 +198,40 @@ export default function Header() {
             className="h-8 w-auto"
           />
         </div>
-        {/* Search input */} 
-          <div className="flex items-center gap-2 mr-auto ml-[160px]">
-            <IoIosSearch className="w-6 h-6 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Looking for something?"
-              className="w-fit px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-sm"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              onFocus={() => searchQuery.trim() !== "" && setShowResults(true)}
-            />
-            <SearchResults
-              results={filteredResults}
-              isVisible={showResults}
-              onClose={() => setShowResults(false)}
-            />
-          </div>
-
-          {/* Capacity section */}
-          <div className="flex items-center gap-4 min-w-[220px]">
-            <span className="text-gray-500 text-base font-medium">
-              Capacity
-            </span>
-            <div className="relative flex-1 w-[140px] h-2 bg-gray-200 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${CAPACITY}%` }}
-                transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                className="absolute top-0 left-0 h-2 bg-yellow-400 rounded-full"
-              />
-            </div>
-            <span className="font-semibold text-gray-950 text-base">
-              {CAPACITY}%
-            </span>
-          </div>
+        {/* Search input */}
+        <div className="flex items-center gap-2 mr-auto ml-[160px]">
+          <SearchNormal1 className="w-6 h-6 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Looking for something?"
+            className="w-fit px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-sm"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onFocus={() => searchQuery.trim() !== "" && setShowResults(true)}
+          />
+          <SearchResults
+            results={filteredResults}
+            isVisible={showResults}
+            onClose={() => setShowResults(false)}
+          />
         </div>
+
+        {/* Capacity section */}
+        <div className="flex items-center gap-4 min-w-[220px]">
+          <span className="text-gray-500 text-base font-medium">Capacity</span>
+          <div className="relative flex-1 w-[140px] h-2 bg-gray-200 rounded-full overflow-hidden">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${CAPACITY}%` }}
+              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+              className="absolute top-0 left-0 h-2 bg-yellow-400 rounded-full"
+            />
+          </div>
+          <span className="font-semibold text-gray-950 text-base">
+            {CAPACITY}%
+          </span>
+        </div>
+      </div>
     </header>
   );
 }

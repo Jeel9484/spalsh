@@ -11,7 +11,7 @@ export default function User() {
       <section className="border-b border-gray-200 mb-9">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl text-gray font-medium">User</h1>
-          <Button className="mb-7 mt-7">
+          <Button variant="primary" size="xs" className="mb-7 mt-7">
             <Usericon />
             Create the User
           </Button>

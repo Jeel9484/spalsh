@@ -190,7 +190,7 @@ export default function CustomFields() {
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-medium">Fields</h1>
           <div className="inline-flex items-center">
-            <Button>
+            <Button variant="primary" size="xs">
               <Add />
               Create a New Tag
             </Button>

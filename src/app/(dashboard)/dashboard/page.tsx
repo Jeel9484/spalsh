@@ -14,15 +14,15 @@ export default function DashboardPage() {
         <div className="flex items-center justify-between">
           <h1 className="text-3xl text-black font-medium">Dashboard</h1>
           <div className=" flex gap-3">
-            <Button>
+            <Button variant="primary" size="xs">
               <User />
               Create the User
             </Button>
-            <Button>
+            <Button variant="primary" size="xs">
               <RepeatCircle />
               Manage Fieds
             </Button>
-            <Button>
+            <Button variant="primary" size="xs">
               <EmojiHappy />
               Snaps by Project
             </Button>
@@ -35,7 +35,9 @@ export default function DashboardPage() {
           <h2 className="text-gray-600 font-semibold text-base">
             Latest Snaps
           </h2>
-          <Button>All Snaps</Button>
+          <Button variant="primary" size="sm">
+            All Snaps
+          </Button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {snapsData.map((item, i) => (
@@ -56,7 +58,7 @@ export default function DashboardPage() {
             <div className="w-full">
               <div className="flex justify-between items-center">
                 <span className="font-semibold text-base">Active users</span>
-                <Button className="px-6 py-4">All Users</Button>
+                <Button variant="primary" size="sm">All Users</Button>
               </div>
               <ActiveUsers users={users} />
             </div>

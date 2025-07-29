@@ -1,7 +1,7 @@
 export interface Project {
   id: number;
   title: string;
-  snaps: number;
+  name: string;
 }
 
 export interface Snap {
@@ -9,14 +9,12 @@ export interface Snap {
   image: string;
   title: string;
   author: string;
-  date: string;
-  time: string;
 }
 
 export interface User {
   id: number;
   name: string;
-  role: string;
+  image: string;
 }
 
 export interface SearchResultsData {
@@ -28,39 +26,33 @@ export interface SearchResultsData {
 export const LOGO = "/assets/logo.svg";
 export const mockSearchResults: SearchResultsData = {
   projects: [
-    { id: 1, title: "Project Alpha", snaps: 32 },
-    { id: 2, title: "Desert Project", snaps: 16 },
-    { id: 3, title: "Urban Landscape", snaps: 28 },
+    { id: 1, title: "Project name #01", name: "Marie Parker" },
+    { id: 2, title: "Project name #01", name: "Marie Smith" },
+    { id: 3, title: "Project name #01", name: "Marie Claire" },
   ],
   snaps: [
     {
       id: 1,
       image: "/assets/img-1.jpg",
-      title: "Mountain View",
-      author: "John P.",
-      date: "12/12/23",
-      time: "17:30h",
+      title: "Project name #01",
+      author: "Marie Parker • 09/05/23.",
     },
     {
       id: 2,
       image: "/assets/img-2.jpg",
-      title: "City Skyline",
-      author: "Sarah M.",
-      date: "11/10/23",
-      time: "09:45h",
+      title: "Project name #01",
+      author: "Marie Parker • 09/05/23.",
     },
     {
       id: 3,
       image: "/assets/img-3.jpg",
-      title: "Forest Trail",
-      author: "Mike D.",
-      date: "10/05/23",
-      time: "14:20h",
+      title: "Project name #01",
+      author: "Marie Parker • 09/05/23.",
     },
   ],
   users: [
-    { id: 1, name: "John Peterson", role: "Designer" },
-    { id: 2, name: "Sarah Miller", role: "Photographer" },
-    { id: 3, name: "Mike Davis", role: "Project Manager" },
+    { id:1, name: "Marie Claire", image: "/assets/us-2.png",},
+    { id:2, name: "Marie Smith", image: "/assets/us-4.png" },
+    { id:3, name: "Marie Parker", image: "/assets/us-3.png" },
   ],
 };
