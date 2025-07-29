@@ -69,7 +69,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   return (
     <div
       ref={resultsRef}
-      className="absolute top-full left-64 w-[432px] bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden"
+      className="absolute top-full left-64 h-[80vh] w-[432px] bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-y-auto overflow-hidden"
     >
       <div className="px-5">
         <div className="border-b border-gray-200 mb-7.5">

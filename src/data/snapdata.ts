@@ -5,6 +5,7 @@ export interface Snap {
   author: string;
   date: string;
   time: string;
+  location: string;
 }
 
 export interface Project {
@@ -23,6 +24,7 @@ export const snapsData: Snap[] = [
     author: "John P.",
     date: "12/12/23",
     time: "17:30h",
+    location: "Montreal, QC",
   },
   {
     image: "/assets/img-2.jpg",
@@ -30,6 +32,8 @@ export const snapsData: Snap[] = [
     author: "John P.",
     date: "12/12/23",
     time: "17:30h",
+     location: "Montreal, QC",
+
   },
   {
     image: "/assets/img-3.jpg",
@@ -37,6 +41,7 @@ export const snapsData: Snap[] = [
     author: "John P.",
     date: "12/12/23",
     time: "17:30h",
+     location: "Montreal, QC",
   },
   {
     image: "/assets/img-4.jpg",
@@ -44,6 +49,7 @@ export const snapsData: Snap[] = [
     author: "John P.",
     date: "12/12/23",
     time: "17:30h",
+    location: "Montreal, QC",
   },
 ];
 
@@ -55,6 +61,7 @@ export const generateAdditionalSnaps = (baseImage: string, count: number, title:
     author: "Project Member",
     date: "12/12/23",
     time: `${Math.floor(Math.random() * 12 + 1)}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')}h`,
+    location:"location",
   }));
 };
 
