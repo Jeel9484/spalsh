@@ -10,10 +10,10 @@ import { snapsData, users } from "@/data/dashboarddata";
 export default function DashboardPage() {
   return (
     <>
-      <section className="border-b border-gray-200 py-3 mb-8 ">
+      <section className="border-b border-gray-200 py-7 mb-8 ">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl text-black font-medium">Dashboard</h1>
-          <div className=" flex gap-3 py-7">
+          <div className=" flex gap-3">
             <Button>
               <User />
               Create the User
@@ -50,11 +50,9 @@ export default function DashboardPage() {
           <div className="flex items-center gap-3"></div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-          <div className="shadow-custom">
             <Barchart />
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Piechart />
+               <Piechart />
             <div className="w-full">
               <div className="flex justify-between items-center">
                 <span className="font-semibold text-base">Active users</span>

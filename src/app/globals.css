@@ -128,3 +128,7 @@
 .shadow-custom {
   box-shadow: 40px 54px 94px 0px #00000012;
 }
+.shadow-custom2{
+   box-shadow: 40px 54px 94px 0px rgba(0, 0, 0, 0.07);
+;
+}
