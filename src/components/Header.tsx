@@ -91,7 +91,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
                   width={34}
                   height={34}
                   className={`rounded-full w-8.5 h-8.5 object-cover
-                    ${activeIndices.includes(idx) ? "bg-primary" : "grayscale"}
+                    ${activeIndices.includes(idx) ? "bg-primary" : "bg-light-gray grayscale"}
                     `}
                 />
                 <h4 className="font-medium text-sm">{user.name}</h4>
