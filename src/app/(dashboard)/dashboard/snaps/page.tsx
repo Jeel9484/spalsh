@@ -8,7 +8,7 @@ export default function SnapsPage() {
 
   return (
     <>
-      <section className="border-b border-gray-200 py-5.5 mb-9">
+      <section className="border-b border-gray-200 py-7 mb-9">
         <h1 className="text-3xl font-medium text-gray">Snaps</h1>
       </section>
 

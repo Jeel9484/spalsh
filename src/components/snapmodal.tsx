@@ -25,11 +25,17 @@ const SnapModal: React.FC<SnapModalProps> = ({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="relative bg-white rounded-xl shadow-xl max-w-3xl w-full mx-4">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white rounded-xl shadow-xl max-w-3xl w-full mx-4"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-black z-10"
+          className="absolute top-[-50px] right-0 text-4xl text-gray-400 hover:text-black z-10"
           aria-label="Close modal"
         >
           ×

@@ -20,13 +20,13 @@ export default function Sidebar() {
     <aside className="w-full bg-white flex flex-col justify-between border-r border-gray-200 z-30 shadow-custom">
       <div>
         {/* Sidebar brand */}
-        <div className="flex items-center gap-2 py-6 px-8 border-b border-gray-200">
+        <div className="flex items-center gap-2 py-7 px-7.5 border-b border-gray-200">
           <Image
             src={SIDEBAR_LOGO}
             alt="logo"
-            width={40}
-            height={40}
-            className="h-7 w-auto"
+            width={38}
+            height={38}
+            className="h-9.5 w-auto"
           />
           <span className="font-semibold text-lg text-gray-800">
             Eugeniuses
@@ -44,8 +44,8 @@ export default function Sidebar() {
                 className={`flex items-center gap-3 px-4 py-2 rounded-lg font-semibold 
               ${
                 isActive
-                  ? "bg-yellow-300 text-white" // Active
-                  : "text-gray-700 hover:text-black hover:bg-gray-100" // Inactive
+                  ? "bg-yellow-300 text-white" 
+                  : "text-gray-700 hover:text-black hover:bg-gray-100"
               }`}
               >
                 <Icon className="text-xl" />

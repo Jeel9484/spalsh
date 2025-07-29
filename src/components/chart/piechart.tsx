@@ -33,10 +33,10 @@ const series = [25];
 export default function Piechart() {
   return (
     <Card className="w-full h-full grid place-items-center justify-center shadow-custom2">
-      <CardHeader className="w-full ml-4">
-        <CardTitle className="text-base font-medium">Analytics B</CardTitle>
+      <CardHeader className="w-full">
+        <CardTitle className="text-base font-medium px-5 pt-3.5">Analytics B</CardTitle>
       </CardHeader>
-      <CardContent className="grid place-items-center mt-25">
+      <CardContent className="grid place-items-center mt-15">
         <ReactApexChart
           options={options}
           series={series}

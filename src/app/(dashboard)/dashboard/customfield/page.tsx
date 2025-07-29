@@ -186,9 +186,9 @@ export default function CustomFields() {
 
   return (
     <>
-      <section className="border-b border-gray-200 py-6 mb-9">
+      <section className="border-b border-gray-200 py-7 mb-9">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-medium">Fields</h1>
+          <h1 className="text-3xl font-medium text-gray">Fields</h1>
           <div className="inline-flex items-center">
             <Button variant="primary" size="xs">
               <Add />

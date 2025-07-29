@@ -9,9 +9,9 @@ export default function User() {
   return (
     <>
       <section className="border-b border-gray-200 mb-9">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center py-7">
           <h1 className="text-3xl text-gray font-medium">User</h1>
-          <Button variant="primary" size="xs" className="mb-7 mt-7">
+          <Button variant="primary" size="xs">
             <Usericon />
             Create the User
           </Button>

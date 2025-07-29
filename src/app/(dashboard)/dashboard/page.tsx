@@ -10,10 +10,10 @@ import { snapsData, users } from "@/data/dashboarddata";
 export default function DashboardPage() {
   return (
     <>
-      <section className="border-b border-gray-200 py-7 mb-8 ">
+      <section className="border-b border-gray-200">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl text-black font-medium">Dashboard</h1>
-          <div className=" flex gap-3">
+          <h1 className="text-3xl font-medium text-gray">Dashboard</h1>
+          <div className=" flex gap-3 my-7">
             <Button variant="primary" size="xs">
               <User />
               Create the User
@@ -30,7 +30,7 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      <section className="border-b border-gray-200 mb-11">
+      <section className="border-b border-gray-200 mb-11 mt-8">
         <div className="flex justify-between mb-3">
           <h2 className="text-gray-600 font-semibold text-base">
             Latest Snaps
@@ -39,7 +39,7 @@ export default function DashboardPage() {
             All Snaps
           </Button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-8.5">
           {snapsData.map((item, i) => (
             <Card location="Montecarlo Qc" key={i} {...item} />
           ))}
