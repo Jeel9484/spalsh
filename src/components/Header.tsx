@@ -204,7 +204,7 @@ export default function Header() {
           <input
             type="text"
             placeholder="Looking for something?"
-            className="w-fit px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-sm"
+            className="w-fit px-3 py-2 focus:outline-none text-sm"
             value={searchQuery}
             onChange={handleSearchChange}
             onFocus={() => searchQuery.trim() !== "" && setShowResults(true)}
