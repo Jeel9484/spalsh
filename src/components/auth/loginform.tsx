@@ -10,7 +10,7 @@ export default function LoginForm() {
     const [email, setEmail] = useState<string>(
     () => localStorage.getItem("savedEmail") ?? "jeelgodhani94@gmail.com"
   );
-  const [password, setPassword] = useState<string>("9484");  // dev/demo only
+  const [password, setPassword] = useState<string>("9484");
   const [remember, setRemember] = useState<boolean>(
     () => localStorage.getItem("rememberMe") === "true"
   );

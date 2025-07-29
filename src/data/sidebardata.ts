@@ -4,7 +4,6 @@ import {
   User,
   Notepad,
   Setting2,
-  Logout,
 } from "iconsax-reactjs";
 
 export const NAV_ITEMS = [
