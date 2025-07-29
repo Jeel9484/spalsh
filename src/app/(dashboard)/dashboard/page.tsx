@@ -46,7 +46,7 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      <section className="mb-4">
+      <section className="mb-20">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-semibold text-lg">Analytics</h2>
           <div className="flex items-center gap-3"></div>
