@@ -1,14 +1,32 @@
 "use client"
 import { useState } from "react"
+import { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { HiOutlineSun } from "react-icons/hi"
 import { useRouter } from "next/navigation"
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+    const [email, setEmail] = useState<string>(
+    () => localStorage.getItem("savedEmail") ?? "jeelgodhani94@gmail.com"
+  );
+  const [password, setPassword] = useState<string>("9484");  // dev/demo only
+  const [remember, setRemember] = useState<boolean>(
+    () => localStorage.getItem("rememberMe") === "true"
+  );
+
   const router = useRouter();
+
+  useEffect(() => {
+    if (remember) {
+      localStorage.setItem("savedEmail", email);
+      localStorage.setItem("rememberMe", "true");
+    } else {
+      localStorage.removeItem("savedEmail");
+      localStorage.removeItem("rememberMe");
+    }
+  }, [email, remember]);
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
