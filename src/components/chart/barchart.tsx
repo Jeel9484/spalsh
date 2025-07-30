@@ -30,7 +30,7 @@ const series = [
 export default function Barchart() {
   return (
     <Card className="w-full h-full grid place-content-center">
-      <CardHeader className="mb-5 px-5 pt-3.5">
+      <CardHeader className="mb-5">
         <CardTitle className="text-base font-medium">Analytics A</CardTitle>
       </CardHeader>
       <CardContent>
