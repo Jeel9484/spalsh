@@ -8,7 +8,7 @@ export default function SnapsPage() {
 
   return (
     <>
-      <section className="border-b border-gray-200 py-7 mb-9">
+      <section className="border-b border-gray-200 py-7.5 mb-9">
         <h1 className="text-3xl font-medium text-gray">Snaps</h1>
       </section>
 
@@ -18,7 +18,7 @@ export default function SnapsPage() {
             Latest Snaps
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-8.5">
           {snapsData.map((item, i) => (
             <Card key={i} {...item} />
           ))}
@@ -26,7 +26,7 @@ export default function SnapsPage() {
       </section>
 
       <section>
-        <div className="flex justify-between">
+        <div className="flex justify-between mb-8">
           <h2 className="text-base font-semibold text-gray">
             Projects (8)
           </h2>
@@ -35,12 +35,10 @@ export default function SnapsPage() {
             <FaAngleDown />
           </div>
         </div>
-          <div className="py-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {sampleProjects.map((project, i) => (
                 <SnapProjectCard key={i} {...project} />
               ))}
-            </div>
           </div>
       </section>
     </>

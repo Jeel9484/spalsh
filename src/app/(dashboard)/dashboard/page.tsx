@@ -11,9 +11,9 @@ export default function DashboardPage() {
   return (
     <>
       <section className="border-b border-gray-200">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between my-7">
           <h1 className="text-3xl font-medium text-gray">Dashboard</h1>
-          <div className=" flex gap-3 my-7">
+          <div className=" flex gap-3">
             <Button variant="primary" size="xs">
               <User />
               Create the User

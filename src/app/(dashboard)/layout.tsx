@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           style={{ height: "calc(100vh - 91px)" }}
         >
           <Sidebar />
-          <main className=" overflow-y-auto px-9">{children}</main>
+          <main className=" overflow-y-auto px-9 relative z-100">{children}</main>
         </div>
         <Footer />
       </div>

@@ -51,24 +51,24 @@ const SnapModal: React.FC<SnapModalProps> = ({
           />
         </div>
         {/* Info Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 px-8 py-8 bg-white gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-4 px-10 py-12.5 bg-white gap-6">
           <div>
-            <div className="font-bold text-sm mb-1">Location</div>
-            <div className="text-gray-600 text-base">{location}</div>
+            <h3 className="font-bold text-sm mb-1">Location</h3>
+            <span className="text-gray-600 text-base">{location}</span>
           </div>
           <div>
-            <div className="font-bold text-sm mb-1">Project</div>
-            <div className="text-gray-600 text-base">{title}</div>
+            <h3 className="font-bold text-sm mb-1">Project</h3>
+            <span className="text-gray-600 text-base">{title}</span>
           </div>
           <div>
-            <div className="font-bold text-sm mb-1">Date &amp; Time</div>
-            <div className="text-gray-600 text-base">
+            <h3 className="font-bold text-sm mb-1">Date &amp; Time</h3>
+            <span className="text-gray-600 text-base">
               {date} — {time}
-            </div>
+            </span>
           </div>
           <div>
-            <div className="font-bold text-sm mb-1">Author</div>
-            <div className="text-gray-600 text-base">{author}</div>
+            <h3 className="font-bold text-sm mb-1">Author</h3>
+            <span className="text-gray-600 text-base">{author}</span>
           </div>
         </div>
       </div>

@@ -30,15 +30,15 @@ const series = [
 export default function Barchart() {
   return (
     <Card className="w-full h-full grid place-content-center">
-      <CardHeader className="mb-5">
-        <CardTitle className="text-base font-medium px-5 pt-3.5">Analytics A</CardTitle>
+      <CardHeader className="mb-5 px-5 pt-3.5">
+        <CardTitle className="text-base font-medium">Analytics A</CardTitle>
       </CardHeader>
       <CardContent>
         <ReactApexChart
           options={options}
           series={series}
           type="bar"
-          height={220}
+          height={280}
         />
       </CardContent>
     </Card>
