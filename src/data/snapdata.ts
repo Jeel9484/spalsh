@@ -10,6 +10,7 @@ export interface Snap {
 
 export interface Project {
   title: string;
+  Head: string;
   count: number;
   totalsnaps: number;
   images: string[];
@@ -69,6 +70,7 @@ export const generateAdditionalSnaps = (baseImage: string, count: number, title:
 export const sampleProjects: Project[] = [
   {
     title: "Project Title",
+    Head: "• Project #01",
     count: 29,
     totalsnaps: 32,
     images: [
@@ -81,6 +83,7 @@ export const sampleProjects: Project[] = [
   },
   {
     title: "Desert Project",
+    Head: "• Project #02",
     count: 13,
     totalsnaps: 16,
     images: [
@@ -93,6 +96,7 @@ export const sampleProjects: Project[] = [
   },
   {
     title: "Project Title",
+    Head: "• Project #03",
     count: 25,
     totalsnaps: 28,
     images: [
@@ -105,6 +109,7 @@ export const sampleProjects: Project[] = [
   },
   {
     title: "Project Title",
+    Head: "• Project #04",
     count: 9,
     totalsnaps: 12,
     images: [

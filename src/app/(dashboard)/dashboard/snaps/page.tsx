@@ -37,7 +37,7 @@ export default function SnapsPage() {
         </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {sampleProjects.map((project, i) => (
-                <SnapProjectCard key={i} {...project} />
+                <SnapProjectCard key={i} {...project} projectIndex={i} />
               ))}
           </div>
       </section>

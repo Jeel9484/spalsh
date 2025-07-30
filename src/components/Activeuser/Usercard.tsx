@@ -1,6 +1,7 @@
 import { EmojiHappy, Trash, Edit } from "iconsax-reactjs";
 import Image from "next/image";
 import { User } from "@/data/userdata";
+import Button from "../ui/button";
 
 interface UserCardProps {
   item: User;
@@ -9,7 +10,7 @@ const UserCard: React.FC<UserCardProps> = ({ item }) => {
   const yellowBgIndices = [2, 4, 5, 7]; // Cards 2, 4, 5, 7
 
   return (
-    <div className="relative py-6 bg-white border">
+    <div className="relative pb-6 px-6 bg-white border pt-15">
       {/* Top-right icons */}
       <div className="absolute top-5 right-5 flex gap-3">
         <Trash className="text-red-400 hover:text-red-600 cursor-pointer" />
@@ -38,10 +39,10 @@ const UserCard: React.FC<UserCardProps> = ({ item }) => {
         <h3 className="text-sm font-semibold text-gray mb-6">{item.name}</h3>
 
         {/* Snap Count */}
-        <div className="bg-yellow-400 w-fit text-white px-4 py-1 text-sm rounded-full font-semibold flex items-center gap-2 ">
+        <Button variant="secondary" size="md">
           <EmojiHappy />
           {item.snapCount}
-        </div>
+        </Button>
       </div>
     </div>
   );
