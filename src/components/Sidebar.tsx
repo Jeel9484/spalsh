@@ -44,13 +44,13 @@ export default function Sidebar() {
                 className={`flex items-center gap-3 px-4 py-2 rounded-lg font-semibold 
               ${
                 isActive
-                  ? "text-gray-700" 
+                  ? "text-gray-900" 
                   : "text-gray-700 hover:text-black hover:bg-gray-100"
               }`}
               >
-                <div aria-setsize={20} className={`${
+                <div className={`p-2 items-center ${
                   isActive
-                  ? "bg-light-yellow rounded-full font-bold"
+                  ? "bg-light-yellow rounded-full font-bold size-10"
                   : ""
                 }`}>
                    <Icon  />

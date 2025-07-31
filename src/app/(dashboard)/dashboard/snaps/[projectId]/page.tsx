@@ -23,7 +23,7 @@ export default function ProjectSnapsPage() {
 
   return ( 
       <div>
-        <div className="flex justify-between mb-9.5 border-b border-gray-200 py-7.5">
+        <div onClick={handleBackClick} className="flex justify-between mb-9.5 border-b border-gray-200 py-7.5">
           <h3
             onClick={handleBackClick}
             className="text-2xl font-bold text-gray-900 cursor-pointer"

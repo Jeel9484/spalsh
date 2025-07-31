@@ -11,7 +11,7 @@ const variantClasses = {
   primary:
     "bg-black text-white hover:bg-gray-800",
    secondary: 
-      "bg-yellow-400 w-fit text-white text-sm rounded-full font-semibold flex items-center"
+      "bg-yellow-400 text-white text-sm rounded-full font-semibold flex items-center"
 };
 
  
@@ -22,7 +22,7 @@ const sizeClasses = {
 
   sm: "h-[38px] px-3.5 py-3",
 
-  md: "px-4 py-1 gap-2"
+  md: "w-fit px-4 py-1 gap-2"
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
